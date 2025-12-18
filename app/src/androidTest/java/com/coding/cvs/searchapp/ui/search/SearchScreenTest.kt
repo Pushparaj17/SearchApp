@@ -32,8 +32,8 @@ class SearchScreenTest {
             )
         }
 
-        composeRule.onNodeWithTag("searchField").performTextInput("push")
-        assertEquals("push", latestQuery)
+        composeRule.onNodeWithTag("searchField").performTextInput("rick")
+        assertEquals("rick", latestQuery)
     }
 
     @Test
@@ -41,8 +41,8 @@ class SearchScreenTest {
         var clickedId: Int? = null
         val character = Character(
             id = 1,
-            name = "Pushparaj Ponnaiah",
-            imageUrl = "https://example.com/push.png",
+            name = "Rick Sanchez",
+            imageUrl = "https://example.com/rick.png",
             species = "Human",
             status = "Alive",
             originName = "Earth",
@@ -53,7 +53,7 @@ class SearchScreenTest {
         composeRule.setContent {
             SearchScreen(
                 uiState = SearchUiState(
-                    query = "push",
+                    query = "rick",
                     isLoading = false,
                     characters = listOf(character),
                 ),
@@ -62,7 +62,7 @@ class SearchScreenTest {
             )
         }
 
-        composeRule.onNodeWithText("Pushparaj Ponnaiah").assertIsDisplayed()
+        composeRule.onNodeWithText("Rick Sanchez").assertIsDisplayed()
         composeRule.onNodeWithTag("characterItem_1").performClick()
         assertEquals(1, clickedId)
     }

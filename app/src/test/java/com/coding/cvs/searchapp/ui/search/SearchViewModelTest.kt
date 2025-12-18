@@ -27,8 +27,8 @@ class SearchViewModelTest {
         val expected = listOf(
             Character(
                 id = 1,
-                name = "Pushparaj Ponnaiah",
-                imageUrl = "https://example.com/push.png",
+                name = "Rick Sanchez",
+                imageUrl = "https://example.com/rick.png",
                 species = "Human",
                 status = "Alive",
                 originName = "Earth",
@@ -37,19 +37,19 @@ class SearchViewModelTest {
             ),
         )
 
-        every { useCase.invoke("push") } returns flowOf(
+        every { useCase.invoke("rick") } returns flowOf(
             Resource.Loading,
             Resource.Success(expected),
         )
 
         val vm = SearchViewModel(useCase)
-        vm.onQueryChange("push")
+        vm.onQueryChange("rick")
 
         // Let the flow finish.
         advanceUntilIdle()
 
         val state = vm.uiState.value
-        assertEquals("push", state.query)
+        assertEquals("rick", state.query)
         assertFalse(state.isLoading)
         assertNull(state.errorMessage)
         assertEquals(expected, state.characters)

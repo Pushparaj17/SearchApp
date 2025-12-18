@@ -57,4 +57,3 @@ private fun CharacterDto.toDomain(): Character {
         created = DateFormatter.formatCreatedDate(created),
     )
 }
-
