@@ -42,7 +42,7 @@ fun SearchScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "Rick & Morty") },
+                title = { Text(text = "Search") },
             )
         },
     ) { innerPadding ->
