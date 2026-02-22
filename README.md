@@ -79,6 +79,7 @@ Steps (Android Studio):
 1) Open the project.
 2) Sync Gradle.
 3) Run the 'app' configuration on an emulator/device.
+   
 Steps (Command line):
 1) Ensure ANDROID_HOME / ANDROID_SDK_ROOT is set OR create local.properties with:
      sdk.dir=/path/to/Android/Sdk
@@ -90,5 +91,6 @@ How to Run Tests
 ----------------
 Unit tests (JVM):
   ./gradlew testDebugUnitTest
+  
 Instrumented UI tests (requires emulator/device):
   ./gradlew connectedDebugAndroidTest
